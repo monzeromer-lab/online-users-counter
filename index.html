@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>online Users activity monitor with node.js and WebSocket</title>
+  <!-- <script type="text/javascript"
+      src="./socket.io.min.js"></script> -->
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+<body style="
+    background-color: black;
+">
+        <h1 style="
+    text-align: center;
+    font-family: cursive;
+    color: white;
+">count online users</h1>
+        <p style="
+    text-align: center;
+    font-size: xxx-large;
+    font-family: monospace;
+    color: white;
+" id="counter">0
+</p>
+<p style="
+    text-align: center;
+    font-size: medium;
+    font-family: monospace;
+    color: white;
+">online users</p>
+        
+    <h6 style="
+    color: white;
+    font-family: monospace;
+    margin-top: 300px;
+"> Created By: Monzer Omer</h6>
+
+    <script type="text/javascript">
+      const socket = io();
+      socket.on('counter', function (msg) {
+        document.getElementById("counter").innerHTML = msg;
+      });
+    </script>
+  </body>
+
+</html>
