@@ -13,12 +13,10 @@ const io = new Server(httpServer);
 let count = 0;
 
 io.on("connection", (socket) => {
-  console.log("a user connected!");
   count++;
   io.emit("counter", count);
 
   socket.on("disconnect", () => {
-    console.log("a user disconnected");
     count--;
     io.emit("counter", count);
 
